@@ -1,0 +1,36 @@
+---
+version: "3"
+services:
+  #application:
+#  discovery:
+#    image: ad
+#    networks:
+#      - springboot-db-net
+#    ports:
+#      - 1111:1111
+  discovery:
+    image: es
+    networks:
+      - springboot-db-net
+    ports:
+      - 8761:8761
+  ap-api :  
+    image: ar-api
+    networks:
+      - springboot-db-net
+    ports:
+      - "8081:8081"
+    depends_on:
+      - mysqldb
+      - discovery
+#    - ad
+  mysqldb:
+    image: mysql:5.7
+    networks:
+      - springboot-db-net
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=sbms
+networks:
+  springboot-db-net:
+...
