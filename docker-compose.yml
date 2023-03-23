@@ -2,12 +2,12 @@
 version: "3"
 services:
   #application:
-#  discovery:
-#    image: ad
-#    networks:
-#      - springboot-db-net
-#    ports:
-#      - 1111:1111
+  admin-server:
+    image: as
+    networks:
+      - springboot-db-net
+    ports:
+      - 1111:1111
   discovery:
     image: es
     networks:
@@ -23,7 +23,8 @@ services:
     depends_on:
       - mysqldb
       - discovery
-#    - ad
+      - admin-server
+
   mysqldb:
     image: mysql:5.7
     networks:
