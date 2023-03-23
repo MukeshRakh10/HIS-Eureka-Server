@@ -44,7 +44,7 @@ services:
       - springboot-db-net
     environment:
       - MYSQL_ROOT_PASSWORD=root
-      - MYSQL_DATABASE=sbms
+      - MYSQL_DATABASE=arapidb
 networks:
   springboot-db-net:
 ...
