@@ -31,7 +31,7 @@ services:
     networks:
       - springboot-db-net
     ports:
-      - "8083:8083"
+      - "8082:8082"
     depends_on:
       - mysqldb
       - eureka-server
