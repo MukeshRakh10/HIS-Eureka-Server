@@ -33,8 +33,7 @@ services:
       - 8082:8082
     depends_on:
       - mysqldb
-    links:
-     - eureka-server
+      - eureka-server
     environment:
      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eureka-server:8761/eureka
      
