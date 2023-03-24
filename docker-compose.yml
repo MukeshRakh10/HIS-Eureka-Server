@@ -19,38 +19,38 @@ services:
     networks:
       - springboot-db-net
     ports:
-      - "8081:8081"
+      - 8081:8081
     depends_on:
       - mysqldb
       - eureka-server
 #      - admin-server
     environment:
      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eureka-server:8761/eureka
-  dc-api :
-    image: dc-api
-    networks:
-      - springboot-db-net
-    ports:
-      - "8082:8082"
-    depends_on:
-      - mysqldb
-      - eureka-server
-#      - admin-server
-    environment:
-     EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eureka-server:8761/eureka
+#  dc-api :
+#    image: dc-api
+#    networks:
+#      - springboot-db-net
+#    ports:
+#      - "8082:8082"
+#    depends_on:
+#      - mysqldb
+#      - eureka-server
+##      - admin-server
+#    environment:
+#     EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eureka-server:8761/eureka
      
-  ed-api :
-    image: ed-api
-    networks:
-      - springboot-db-net
-    ports:
-      - "8083:8083"
-    depends_on:
-      - mysqldb
-      - eureka-server
-#      - admin-server
-    environment:
-     EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eureka-server:8761/eureka
+#  ed-api :
+#    image: ed-api
+#    networks:
+#      - springboot-db-net
+#    ports:
+#      - "8083:8083"
+#    depends_on:
+#      - mysqldb
+#      - eureka-server
+##      - admin-server
+#    environment:
+#     EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eureka-server:8761/eureka
      
 #  co-api :
 #    image: co-api
