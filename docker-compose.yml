@@ -7,7 +7,6 @@ services:
 #      - springboot-db-net
 #    ports:
 #      - 1111:1111
-
   eureka-server:
     image: es
     networks:
@@ -42,6 +41,7 @@ services:
       client:
        serviceUrl:
         defaultZone: http://localhost:8761/eureka/
+        
      
 #  ed-api :
 #    image: ed-api
