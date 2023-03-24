@@ -26,18 +26,18 @@ services:
 #      - admin-server
     environment:
      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eureka-server:8761/eureka
-#  dc-api :
-#    image: dc-api
-#    networks:
-#      - springboot-db-net
-#    ports:
-#      - "8082:8082"
-#    depends_on:
-#      - mysqldb
-#      - eureka-server
-##      - admin-server
-#    environment:
-#     EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eureka-server:8761/eureka
+  dc-api :
+    image: dc-api
+    networks:
+      - springboot-db-net
+    ports:
+      - 8082:8082
+    depends_on:
+      - mysqldb
+      - eureka-server
+#      - admin-server
+    environment:
+     EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eureka-server:8761/eureka
      
 #  ed-api :
 #    image: ed-api
