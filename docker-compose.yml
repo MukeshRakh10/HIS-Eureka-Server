@@ -35,7 +35,8 @@ services:
       - mysqldb
       - eureka-server
     environment:
-     EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eureka-server:8761/eureka
+     - eureka.client.serviceUrl.defaultZone=http://eureka-server:8761/eureka/
+     - eureka.instance.preferIpAddress=true
      
 #  ed-api :
 #    image: ed-api
